@@ -10,3 +10,9 @@ Contains:
 		addChild(InspectorHandler::create()); // open inspector when transition to the current scene finishes
 		```
 - Utilities (Source/Utility.h)
+
+Install:
+- (Copy over the entire repo without README.md to your game repo)
+- ```sh
+  patch < CMakeLists.patch # install cmake patch (runs pipeline)
+  ```
