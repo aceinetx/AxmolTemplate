@@ -1,13 +1,21 @@
---- CMakeListsOrig.txt	2026-01-04 13:00:03.007095145 +0300
-+++ CMakeLists.txt	2026-01-04 12:55:26.945795398 +0300
-@@ -87,3 +87,10 @@
+--- CMakeLists.txt.orig	2026-01-04 13:36:34.801167816 +0300
++++ CMakeLists.txt	2026-01-04 13:38:33.152425312 +0300
+@@ -87,3 +87,18 @@
  
  # Make sure the AXGameFinalSetup is included at the end of this file
  include(AXGameFinalSetup)
 +
++# Run pipeline
 +add_custom_target(pipeline ALL
 +    COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/Pipeline/pipeline_all.py
 +    COMMENT "Running pipeline"
 +)
 +
 +add_dependencies(${APP_NAME} pipeline)
++
++# C++ standard
++set(CMAKE_CXX_STANDARD 20)
++set(CMAKE_CXX_STANDARD_REQUIRED YES)
++
++# Compile commands
++set(CMAKE_EXPORT_COMPILE_COMMANDS YES)
